@@ -1,9 +1,2 @@
-final/.prettierrc
 .vscode/settings.json
-starter/.prettierrc
-starter/index2.html
-starter/style2.css
-final/index.html
-final/script.js
-final/style.css
-final/scripts.js
+number/.prettierrc
