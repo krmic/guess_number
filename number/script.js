@@ -15,6 +15,11 @@ console.log(document.querySelector('.inp').value);
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highscore = 0;
+
+const displayMessage = function (message) {
+  document.querySelector('.guessing').textContent = message;
+};
+
 console.log(secretNumber);
 document.querySelector('.check').addEventListener('click', function () {
   const input = Number(document.querySelector('.inp').value);
@@ -22,16 +27,15 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // when there is no input
   if (!input) {
-    document.querySelector('.guessing').textContent = 'No Number🙈';
+    displayMessage('No Number🙈');
     // guess is below 0
   } else if (input < 0 || input > 20) {
-    document.querySelector('.guessing').textContent =
-      'Type the number between 1 and 20';
+    displayMessage('Type the number between 1 and 20');
     score--;
     document.querySelector('.score').textContent = score;
     // player wins
   } else if (secretNumber === input) {
-    document.querySelector('.guessing').textContent = 'Correct Number!🙌';
+    displayMessage('Correct Number!🙌');
     document.querySelector('.qmark').textContent = secretNumber;
     //highscore
     if (score > highscore) {
@@ -68,19 +72,19 @@ document.querySelector('.check').addEventListener('click', function () {
 
     // guess is too high
   } else if (input > secretNumber) {
-    document.querySelector('.guessing').textContent = '📈 Too high';
+    displayMessage('📈 Too high');
     score--;
     document.querySelector('.score').textContent = score;
     // guess is too low
   } else if (input < secretNumber) {
-    document.querySelector('.guessing').textContent = '📉 Too low';
+    displayMessage('📉 Too low');
     score--;
     document.querySelector('.score').textContent = score;
   }
   //end of game
   if (score <= 0) {
     document.querySelector('.score').textContent = 0;
-    document.querySelector('.guessing').textContent = 'You Lost😜, Play Again?';
+    displayMessage('You Lost😜, Play Again?');
   }
 });
 
@@ -89,7 +93,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20 + 1);
   document.querySelector('.score').textContent = score;
-  document.querySelector('.guessing').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   document.querySelector('.qmark').textContent = '?';
   document.querySelector('.inp').value = '';
 
