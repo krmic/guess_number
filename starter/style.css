@@ -44,6 +44,7 @@ header .btn {
   top: 2.5rem;
   left: 2.5rem;
   font-family: inherit;
+  font-size: 1.3rem;
   display: inline-block;
   background: rgb(199, 199, 199);
   width: 200px;
@@ -86,6 +87,7 @@ main .container-right {
 
 .container-left .btn {
   font-family: inherit;
+  font-size: 1.3rem;
   display: inline-block;
   background: rgb(175, 175, 175);
   width: 200px;
