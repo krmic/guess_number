@@ -1,16 +1,4 @@
 'use strict';
-/*
-console.log(document.querySelector('.guessing').textContent);
-
-document.querySelector('.guessing').textContent = 'Correct Number🙈';
-
-document.querySelector('.qmark').textContent = 13;
-document.querySelector('.score').textContent = 10;
-
-document.querySelector('.inp').value = 23;
-console.log(document.querySelector('.inp').value);
-
-*/
 
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
